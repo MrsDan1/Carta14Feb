@@ -1,18 +1,12 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const envelope = document.getElementById("envelope");
 
-    envelope.addEventListener("mouseenter", () => {
-        envelope.classList.add("open");
-    });
 
-    envelope.addEventListener("mouseleave", () => {
-        envelope.classList.remove("open");
-    });
+document.addEventListener("click", function() {
+    const audio = document.getElementById("background-music");
+    if (audio.paused) {
+        audio.play().catch(error => console.log("Autoplay bloqueado:", error));
+    }
+}, { once: true }); // Solo se ejecuta una vez
 
-    envelope.addEventListener("click", () => {
-        envelope.classList.toggle("open");
-    });
-});
 
 document.addEventListener("DOMContentLoaded", () => {
     const envelope = document.getElementById("envelope");
